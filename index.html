@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+
+    <!-- Bootstrap 5.3.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css?v=5">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-root-margin="0px 0px -40%" tabindex="0">
+
+<!-- ================= WELCOME SCREEN ================= -->
+<div id="welcomeScreen" class="welcome-screen is-hidden">
+    <div class="welcome-card">
+        <div class="welcome-icon"><i class="bi bi-person-circle"></i></div>
+        <p class="section-subtitle">WELCOME</p>
+        <h1>Welcome to <span>Personal Portfolio</span></h1>
+        <p class="welcome-description">Before you explore, tell me your name.</p>
+
+        <form id="welcomeForm" novalidate>
+            <label for="visitorName" class="form-label">Your Name</label>
+            <input type="text" id="visitorName" class="form-control" placeholder="Enter your name" maxlength="40" autocomplete="off">
+            <div id="welcomeError" class="welcome-error is-hidden">Please enter your name to continue.</div>
+            <button type="submit" class="btn btn-primary-custom w-100 mt-3">
+                Enter Portfolio <i class="bi bi-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="btn btn-save ms-lg-3 mt-3 mt-lg-0" type="button"
+                data-bs-toggle="modal" data-bs-target="#nameModal">
+                <i class="bi bi-person"></i> Change Name
+            </button>
+            <button class="btn btn-edit ms-lg-2 mt-2 mt-lg-0" type="button" id="editButton">
+                <i class="bi bi-pencil-square"></i> Edit Page
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= CHANGE NAME POPUP ================= -->
+<div class="modal fade" id="nameModal" tabindex="-1" aria-labelledby="nameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal">
+
+            <form id="nameForm" novalidate>
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="nameModalLabel">Change Name</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <label for="newVisitorName" class="form-label">Enter your name</label>
+                    <input type="text" id="newVisitorName" class="form-control" placeholder="Enter your name" maxlength="40" autocomplete="off">
+                    <div id="nameError" class="welcome-error is-hidden">Please enter a name.</div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary-custom">Save Name</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+
+            <div class="col-lg-7">
+                <p class="section-subtitle">WELCOME TO MY PORTFOLIO</p>
+                <h1>Hello, <span class="visitor-name">Guest</span>!</h1>
+                <h2>BCA Student | Aspiring Developer</h2>
+
+                <p class="hero-description">
+                    I'm a BCA student at KLE Technological University,
+                    passionate about software development, web technologies
+                    and DevOps. I enjoy exploring new technologies and
+                    creating meaningful digital experiences.
+                </p>
+
+                <div class="mt-4">
+                    <a href="#projects" class="btn btn-primary-custom">View My Work <i class="bi bi-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
+                </div>
+
+                <div class="social-links mt-4">
+                    <span>Connect with me:</span>
+                    <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <div class="profile-circle"><i class="bi bi-person-fill"></i></div>
+                <p class="profile-caption">Aspiring Software Developer</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-padding">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <p class="section-subtitle">GET TO KNOW ME</p>
+            <h2>About <span>Me</span></h2>
+            <p>A little introduction about myself.</p>
+        </div>
+
+        <div class="row align-items-center mt-5">
+            <div class="col-lg-7">
+                <div class="about-content">
+                    <h3>Hello! I'm <span class="visitor-name">Guest</span>.</h3>
+                    <p>
+                        I am a Bachelor of Computer Applications (BCA) student at
+                        KLE Technological University. I am interested in software
+                        development, programming and modern technologies.
+                    </p>
+                    <p>
+                        I enjoy learning programming languages, exploring new tools
+                        and developing creative solutions through practical projects.
+                    </p>
+                    <p>
+                        My areas of interest include web development, software
+                        development and DevOps. My goal is to continuously improve
+                        my technical knowledge and become a skilled developer.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <div class="about-card">
+                    <div class="about-icon"><i class="bi bi-person-circle"></i></div>
+                    <h4>Personal Information</h4>
+                    <hr>
+                    <p><strong>Name:</strong> <span class="visitor-name">Guest</span></p>
+                    <p><strong>Education:</strong> BCA</p>
+                    <p><strong>Institution:</strong> KLE Technological University</p>
+                    <p><strong>Role:</strong> Aspiring Developer</p>
+                    <p><strong>Interests:</strong> Software Development, Web Technologies and DevOps</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section-padding alt-section">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <p class="section-subtitle">WHAT I KNOW</p>
+            <h2>My <span>Technical Skills</span></h2>
+            <p>Technologies and programming languages I work with.</p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-code-slash"></i><h5>C++</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:70%" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-cup-hot-fill"></i><h5>Java</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:65%" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-terminal-fill"></i><h5>Python</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:65%" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-filetype-html"></i><h5>HTML5</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-filetype-css"></i><h5>CSS3</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="skill-card">
+                    <div class="skill-title"><i class="bi bi-filetype-js"></i><h5>JavaScript</h5></div>
+                    <div class="progress"><div class="progress-bar" style="width:60%" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+            <h4>Tools &amp; Technologies</h4>
+            <span class="badge skill-badge">C++</span>
+            <span class="badge skill-badge">Java</span>
+            <span class="badge skill-badge">Python</span>
+            <span class="badge skill-badge">HTML5</span>
+            <span class="badge skill-badge">CSS3</span>
+            <span class="badge skill-badge">JavaScript</span>
+            <span class="badge skill-badge">Bootstrap 5</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="section-padding">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <p class="section-subtitle">MY WORK</p>
+            <h2>My <span>Projects</span></h2>
+            <p>Some projects that showcase my learning and creativity.</p>
+        </div>
+
+        <div class="row g-4 mt-4">
+
+            <!-- PROJECT 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-icon"><i class="bi bi-activity"></i></div>
+                    <h4>CalTrack</h4>
+                    <p>A project focused on calorie tracking and helping users monitor their daily food intake.</p>
+                    <div class="mb-3">
+                        <span class="badge project-badge">Project</span>
+                        <span class="badge project-badge">Calorie Tracking</span>
+                    </div>
+                    <button class="btn btn-primary-custom" type="button"
+                        data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="CalTrack"
+                        data-description="CalTrack is a project focused on calorie tracking and monitoring daily food intake. Add the actual features and technologies of your implementation here.">
+                        Project Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-icon"><i class="bi bi-calendar-check"></i></div>
+                    <h4>Study Planner</h4>
+                    <p>A study planning project designed to help organise study tasks and manage learning schedules.</p>
+                    <div class="mb-3">
+                        <span class="badge project-badge">Project</span>
+                        <span class="badge project-badge">Productivity</span>
+                    </div>
+                    <button class="btn btn-primary-custom" type="button"
+                        data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="Study Planner"
+                        data-description="Study Planner is a project designed to organise study tasks and schedules. Add the actual features and technologies of your implementation here.">
+                        Project Details
+                    </button>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                    <div class="project-icon"><i class="bi bi-mortarboard"></i></div>
+                    <h4>InterviewIQ</h4>
+                    <p>A project related to interview preparation and helping learners practise their interview skills.</p>
+                    <div class="mb-3">
+                        <span class="badge project-badge">Project</span>
+                        <span class="badge project-badge">Learning</span>
+                    </div>
+                    <button class="btn btn-primary-custom" type="button"
+                        data-bs-toggle="modal" data-bs-target="#projectModal"
+                        data-title="InterviewIQ"
+                        data-description="InterviewIQ is a project related to interview preparation. Add the actual features and technologies of your implementation here.">
+                        Project Details
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT DETAILS MODAL -->
+<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalLabel">Project Details</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalProjectTitle"></h4>
+                <p id="modalProjectDescription"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary-custom" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= EXPERIENCE & EDUCATION ================= -->
+<section id="experience" class="section-padding alt-section">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <p class="section-subtitle">MY JOURNEY</p>
+            <h2>Education &amp; <span>Experience</span></h2>
+            <p>My academic background and learning journey.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+
+                <div class="accordion custom-accordion" id="journeyAccordion">
+
+                    <!-- EDUCATION -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#education" aria-expanded="true" aria-controls="education">
+                                <i class="bi bi-mortarboard-fill me-3"></i> Education
+                            </button>
+                        </h2>
+                        <div id="education" class="accordion-collapse collapse show" data-bs-parent="#journeyAccordion">
+                            <div class="accordion-body">
+                                <h5>Bachelor of Computer Applications (BCA)</h5>
+                                <p>KLE Technological University</p>
+                                <p>
+                                    Studying computer applications with an interest in
+                                    programming, software development and emerging technologies.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EXPERIENCE -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#experienceDetails" aria-expanded="false" aria-controls="experienceDetails">
+                                <i class="bi bi-briefcase-fill me-3"></i> Experience
+                            </button>
+                        </h2>
+                        <div id="experienceDetails" class="accordion-collapse collapse" data-bs-parent="#journeyAccordion">
+                            <div class="accordion-body">
+                                <h5>Academic Projects and Practical Learning</h5>
+                                <p>
+                                    Developing programming and web development skills through
+                                    academic projects and independent learning.
+                                </p>
+                                <p>
+                                    This portfolio itself demonstrates practical use of HTML,
+                                    CSS, JavaScript and Bootstrap.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- INTERESTS -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#interests" aria-expanded="false" aria-controls="interests">
+                                <i class="bi bi-lightbulb-fill me-3"></i> Areas of Interest
+                            </button>
+                        </h2>
+                        <div id="interests" class="accordion-collapse collapse" data-bs-parent="#journeyAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Software Development</li>
+                                    <li>Web Development</li>
+                                    <li>DevOps</li>
+                                    <li>Programming and Problem Solving</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-padding">
+    <div class="container">
+
+        <div class="section-heading text-center">
+            <p class="section-subtitle">GET IN TOUCH</p>
+            <h2>Contact <span>Me</span></h2>
+            <p>Have a question or want to connect? Send me a message.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-card">
+
+                    <form id="contactForm" novalidate>
+
+                        <div class="mb-4">
+                            <label for="fullName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter your name" autocomplete="off">
+                            <div class="field-error" id="fullNameError"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" autocomplete="off">
+                            <div class="field-error" id="emailError"></div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Write your message"></textarea>
+                            <div class="field-error" id="messageError"></div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary-custom w-100">
+                            Send Message <i class="bi bi-send"></i>
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT SUCCESS MODAL -->
+<div class="modal fade" id="contactSuccessModal" tabindex="-1" aria-labelledby="contactSuccessTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content custom-modal text-center">
+            <div class="modal-body p-4">
+                <i class="bi bi-check-circle-fill contact-success-icon"></i>
+                <h4 id="contactSuccessTitle" class="mt-3">Message Details Accepted!</h4>
+                <p class="mt-2">Thank you for contacting me. Your details have been validated successfully.</p>
+                <button type="button" class="btn btn-primary-custom mt-2" data-bs-dismiss="modal">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container text-center">
+        <h4><span class="visitor-name">Guest</span><span class="dot">.</span></h4>
+        <p>Personal Portfolio Website</p>
+
+        <div class="footer-socials">
+            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <hr>
+        <p class="copyright">© 2026 <span class="visitor-name">Guest</span>. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="js/script.js?v=5"></script>
+
+</body>
+</html>

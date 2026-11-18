@@ -1,0 +1,644 @@
+/* ===== 1. GLOBAL ===== */
+
+:root {
+    --primary-bg: #0b1220;
+    --secondary-bg: #111c2e;
+    --alt-bg: #0e1929;
+    --accent-color: #20c9b0;
+    --text-color: #f1f5f9;
+    --muted-color: #94a3b8;
+    --error-color: #ff5c6c;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.alt-section {
+    background-color: var(--alt-bg);
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.section-subtitle {
+    color: var(--accent-color);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.section-heading h2 span {
+    color: var(--accent-color);
+}
+
+.section-heading > p:last-child {
+    color: var(--muted-color);
+}
+
+
+/* ===== 2. WELCOME SCREEN ===== */
+
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: linear-gradient(135deg, #0b1220, #111c2e);
+}
+
+.welcome-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 42px;
+    text-align: center;
+    background-color: var(--secondary-bg);
+    border: 1px solid rgba(32, 201, 176, 0.45);
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.welcome-icon {
+    color: var(--accent-color);
+    font-size: 58px;
+    margin-bottom: 15px;
+}
+
+.welcome-card h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.welcome-card h1 span {
+    color: var(--accent-color);
+}
+
+.welcome-description {
+    color: var(--muted-color);
+    margin-bottom: 25px;
+}
+
+.welcome-card .form-label {
+    display: block;
+    text-align: left;
+}
+
+.welcome-error {
+    color: var(--error-color);
+    text-align: left;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+
+/* ===== 3. NAVBAR ===== */
+
+.navbar {
+    background-color: rgba(11, 18, 32, 0.97);
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-link {
+    color: var(--muted-color) !important;
+    margin-left: 12px;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-color) !important;
+}
+
+.btn-edit,
+.btn-save {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 9px 13px;
+    border-radius: 7px;
+}
+
+.btn-edit:hover,
+.btn-save:hover {
+    background-color: var(--accent-color);
+    color: #07131b;
+}
+
+
+/* ===== 4. HOME ===== */
+
+.hero-section {
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.hero-section h1 span {
+    color: var(--accent-color);
+}
+
+.hero-section h2 {
+    font-size: 23px;
+    color: var(--muted-color);
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    color: var(--muted-color);
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 620px;
+}
+
+.profile-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #20c9b0, #126e75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 8px solid rgba(32, 201, 176, 0.15);
+    box-shadow: 0 0 45px rgba(32, 201, 176, 0.15);
+}
+
+.profile-circle i {
+    font-size: 150px;
+    color: #0b1220;
+}
+
+.profile-caption {
+    color: var(--muted-color);
+    margin-top: 20px;
+}
+
+
+/* ===== 5. BUTTONS AND SOCIAL LINKS ===== */
+
+.btn-primary-custom {
+    background-color: var(--accent-color);
+    color: #07131b;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 1px solid var(--accent-color);
+    margin-right: 8px;
+    text-decoration: none;
+}
+
+.btn-primary-custom:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.btn-outline-custom {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--accent-color);
+    color: #07131b;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: var(--muted-color);
+}
+
+.social-links a {
+    color: var(--accent-color);
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
+}
+
+
+/* ===== 6. ABOUT ===== */
+
+.about-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: var(--muted-color);
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.about-card {
+    background-color: var(--secondary-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.about-icon {
+    color: var(--accent-color);
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.about-card h4 {
+    font-size: 20px;
+}
+
+.about-card p {
+    color: var(--muted-color);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.about-card hr {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ===== 7. SKILLS ===== */
+
+.skill-card {
+    background-color: var(--secondary-bg);
+    border-radius: 12px;
+    padding: 25px;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.skill-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.skill-title i {
+    color: var(--accent-color);
+    font-size: 28px;
+}
+
+.skill-title h5 {
+    margin: 0;
+    font-weight: bold;
+}
+
+.progress {
+    height: 9px;
+    background-color: #263449;
+    border-radius: 20px;
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+    border-radius: 20px;
+}
+
+.skill-badge,
+.project-badge {
+    background-color: rgba(32, 201, 176, 0.12);
+    color: var(--accent-color);
+    padding: 10px 16px;
+    margin: 5px;
+    font-size: 13px;
+    border: 1px solid rgba(32, 201, 176, 0.2);
+}
+
+
+/* ===== 8. PROJECTS ===== */
+
+.project-card {
+    background-color: var(--secondary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 15px;
+    padding: 30px;
+    height: 100%;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+}
+
+.project-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    background-color: rgba(32, 201, 176, 0.12);
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 22px;
+}
+
+.project-card h4 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    color: var(--muted-color);
+    line-height: 1.8;
+    min-height: 85px;
+}
+
+
+/* ===== 9. MODALS ===== */
+
+.custom-modal {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+}
+
+.custom-modal .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-modal .modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-modal .modal-body p {
+    color: var(--muted-color);
+    line-height: 1.8;
+}
+
+.contact-success-icon {
+    color: var(--accent-color);
+    font-size: 54px;
+}
+
+
+/* ===== 10. EXPERIENCE ACCORDION ===== */
+
+.custom-accordion .accordion-item {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.custom-accordion .accordion-button {
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 22px;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--accent-color);
+}
+
+.custom-accordion .accordion-button::after {
+    filter: invert(1);
+}
+
+.custom-accordion .accordion-body {
+    color: var(--muted-color);
+    line-height: 1.8;
+}
+
+.custom-accordion .accordion-body h5 {
+    color: var(--accent-color);
+}
+
+
+/* ===== 11. CONTACT ===== */
+
+.contact-card {
+    background-color: var(--secondary-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 35px;
+}
+
+.form-label {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #0b1220;
+    color: white;
+    border: 1px solid #34445a;
+    padding: 13px;
+}
+
+.form-control:focus {
+    background-color: #0b1220;
+    color: white;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(32, 201, 176, 0.15);
+}
+
+.form-control::placeholder {
+    color: #718096;
+}
+
+/* Red border on a field that has an error */
+.form-control.is-invalid,
+.form-control.is-invalid:focus {
+    border-color: var(--error-color);
+    background-image: none;
+    box-shadow: none;
+}
+
+/* Red warning line under a field (hidden until there is an error) */
+.field-error {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    color: var(--error-color);
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.field-error.show {
+    display: flex;
+}
+
+.field-error i {
+    font-size: 15px;
+}
+
+
+/* ===== 12. FOOTER ===== */
+
+.footer {
+    background-color: #070d18;
+    padding: 45px 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer h4 {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.footer h4 .dot {
+    color: var(--accent-color);
+}
+
+.footer p {
+    color: var(--muted-color);
+}
+
+.footer-socials {
+    margin: 20px 0;
+}
+
+.footer-socials a {
+    color: var(--accent-color);
+    font-size: 24px;
+    margin: 0 12px;
+}
+
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+
+/* ===== 13. EDIT MODE ===== */
+
+.editing [data-editable] {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+    cursor: text;
+}
+
+.editing [data-editable]:focus {
+    outline: 2px solid white;
+    background-color: rgba(32, 201, 176, 0.08);
+}
+
+
+/* ===== 14. RESPONSIVE ===== */
+
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .hero-section {
+        text-align: center;
+        padding: 120px 0 60px;
+    }
+
+    .hero-description {
+        margin: auto;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .profile-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .profile-circle i {
+        font-size: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .hero-section h1 {
+        font-size: 38px;
+    }
+
+    .hero-section h2 {
+        font-size: 19px;
+    }
+
+    .contact-card {
+        padding: 22px;
+    }
+
+    .welcome-card {
+        padding: 30px 22px;
+    }
+}
